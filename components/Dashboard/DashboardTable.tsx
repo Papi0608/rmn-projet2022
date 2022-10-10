@@ -1,19 +1,4 @@
-import React, { FunctionComponent} from "react";
-import styled from "styled-components";
-
-import EtageItem from "./types"
-
-const StyledContainer = styled.section`
-  max-width: 1024px;
-  padding: 0 20px;
-  margin: 0 auto;
-`;
-
-const StyledSmallContainer = styled.section`
-  max-width: 1024px;
-  padding: 0 10px;
-  margin: 0 auto;
-`;
+import React from "react";
 
 const DashboardTableSection = () => {
   const body = [
