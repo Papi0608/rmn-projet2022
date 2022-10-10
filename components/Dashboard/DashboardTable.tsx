@@ -27,7 +27,7 @@ const DashboardTableSection = () => {
                   <tr className="bg-[#0E5672] border-b" key={index}>
                   <td className="px-6 py-4 whitespace-nowrap text-xl font-medium text-center text-white border-r">{row.etages}</td>
                   <td className="text-xl text-white font-light px-6 py-4 whitespace-nowrap hover:bg-[#0c7dad] text-center border-r">
-                  <a href="login" className="mt-6 w-96 rounded-xl text-center hover:text-orange-400 text-white">
+                  <a href={row.A} className="mt-6 w-96 rounded-xl text-center hover:text-orange-400 text-white">
                     <h3 className="text-2xl font-bold">{row.A}</h3> 
                   </a>
                   </td>
