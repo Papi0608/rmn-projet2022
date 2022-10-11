@@ -11,7 +11,7 @@ const DashboardTableSection = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4">
+    <div className='flex h-full flex-col justify-center items-center '>
       <table className="border-separate border border-slate-400 ">
               <thead className="border-b">
                 <tr className="bg-gray-400 border-b">
