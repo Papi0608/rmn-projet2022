@@ -52,71 +52,122 @@ const TableA = () => {
             ],
             facture: [
                 {id: "123", date: "2022/08/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Dame" },
-                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"  },
-                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"  },
-        ]
+                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"},
+                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"},
+            ]
         },
         B:{
-            contrat: {
-                id: "",
-                date_debut: "",
-                date_de_naissance: "",
-                date_fin: "",
-                nom: "",
-                prenom: ""
-            },
-            facture: {
-                id: "",
-                date: "",
-                statut: ""
-            }
+            contrat: [
+                {id: "569", date_debut: "2022/07/01", date_fin: "2023/06/30", nom: "Mbaye", prenom: "Dame" , date_de_naissance: "1986/08/02"},
+                {id: "568", date_debut: "2021/07/01", date_fin: "2022/06/30", nom: "Mbaye", prenom: "Madiaw" , date_de_naissance: "1986/08/02"},
+                {id: "567", date_debut: "2020/07/01", date_fin: "2021/06/30", nom: "Mbaye", prenom: "Lamine" , date_de_naissance: "1986/08/02"},
+            ],
+            facture: [
+                {id: "123", date: "2022/08/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Dame" },
+                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"},
+                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"},
+            ]
         },
         C:{
-            contrat: {
-                id: "",
-                date_debut: "",
-                date_de_naissance: "",
-                date_fin: "",
-                nom: "",
-                prenom: ""
-            },
-            facture: {
-                id: "",
-                date: "",
-                statut: ""
-            }
+            contrat: [
+                {id: "569", date_debut: "2022/07/01", date_fin: "2023/06/30", nom: "Mbaye", prenom: "Dame" , date_de_naissance: "1986/08/02"},
+                {id: "568", date_debut: "2021/07/01", date_fin: "2022/06/30", nom: "Mbaye", prenom: "Madiaw" , date_de_naissance: "1986/08/02"},
+                {id: "567", date_debut: "2020/07/01", date_fin: "2021/06/30", nom: "Mbaye", prenom: "Lamine" , date_de_naissance: "1986/08/02"},
+            ],
+            facture: [
+                {id: "123", date: "2022/08/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Dame" },
+                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"},
+                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"},
+            ]
         },
         D:{
-            contrat: {
-                id: "",
-                date_debut: "",
-                date_de_naissance: "",
-                date_fin: "",
-                nom: "",
-                prenom: ""
-            },
-            facture: {
-                id: "",
-                date: "",
-                statut: ""
-            }
+            contrat: [
+                {id: "569", date_debut: "2022/07/01", date_fin: "2023/06/30", nom: "Mbaye", prenom: "Dame" , date_de_naissance: "1986/08/02"},
+                {id: "568", date_debut: "2021/07/01", date_fin: "2022/06/30", nom: "Mbaye", prenom: "Madiaw" , date_de_naissance: "1986/08/02"},
+                {id: "567", date_debut: "2020/07/01", date_fin: "2021/06/30", nom: "Mbaye", prenom: "Lamine" , date_de_naissance: "1986/08/02"},
+            ],
+            facture: [
+                {id: "123", date: "2022/08/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Dame" },
+                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"},
+                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"},
+            ]
         },
         E:{
-            contrat: {
-                id: "",
-                date_debut: "",
-                date_de_naissance: "",
-                date_fin: "",
-                nom: "",
-                prenom: ""
-            },
-            facture: {
-                id: "",
-                date: "",
-                statut: ""
-            }
+            contrat: [
+                {id: "569", date_debut: "2022/07/01", date_fin: "2023/06/30", nom: "Mbaye", prenom: "Dame" , date_de_naissance: "1986/08/02"},
+                {id: "568", date_debut: "2021/07/01", date_fin: "2022/06/30", nom: "Mbaye", prenom: "Madiaw" , date_de_naissance: "1986/08/02"},
+                {id: "567", date_debut: "2020/07/01", date_fin: "2021/06/30", nom: "Mbaye", prenom: "Lamine" , date_de_naissance: "1986/08/02"},
+            ],
+            facture: [
+                {id: "123", date: "2022/08/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Dame" },
+                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"},
+                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"},
+            ]
         }
-    }
+        },
+        {id: "1",
+        A:{
+            contrat: [
+                {id: "569", date_debut: "2022/07/01", date_fin: "2023/06/30", nom: "Mbaye", prenom: "Dame" , date_de_naissance: "1986/08/02"},
+                {id: "568", date_debut: "2021/07/01", date_fin: "2022/06/30", nom: "Mbaye", prenom: "Madiaw" , date_de_naissance: "1986/08/02"},
+                {id: "567", date_debut: "2020/07/01", date_fin: "2021/06/30", nom: "Mbaye", prenom: "Lamine" , date_de_naissance: "1986/08/02"},
+            
+            ],
+            facture: [
+                {id: "123", date: "2022/08/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Dame" },
+                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"},
+                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"},
+            ]
+        },
+        B:{
+            contrat: [
+                {id: "569", date_debut: "2022/07/01", date_fin: "2023/06/30", nom: "Mbaye", prenom: "Dame" , date_de_naissance: "1986/08/02"},
+                {id: "568", date_debut: "2021/07/01", date_fin: "2022/06/30", nom: "Mbaye", prenom: "Madiaw" , date_de_naissance: "1986/08/02"},
+                {id: "567", date_debut: "2020/07/01", date_fin: "2021/06/30", nom: "Mbaye", prenom: "Lamine" , date_de_naissance: "1986/08/02"},
+            ],
+            facture: [
+                {id: "123", date: "2022/08/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Dame" },
+                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"},
+                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"},
+            ]
+        },
+        C:{
+            contrat: [
+                {id: "569", date_debut: "2022/07/01", date_fin: "2023/06/30", nom: "Mbaye", prenom: "Dame" , date_de_naissance: "1986/08/02"},
+                {id: "568", date_debut: "2021/07/01", date_fin: "2022/06/30", nom: "Mbaye", prenom: "Madiaw" , date_de_naissance: "1986/08/02"},
+                {id: "567", date_debut: "2020/07/01", date_fin: "2021/06/30", nom: "Mbaye", prenom: "Lamine" , date_de_naissance: "1986/08/02"},
+            ],
+            facture: [
+                {id: "123", date: "2022/08/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Dame" },
+                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"},
+                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"},
+            ]
+        },
+        D:{
+            contrat: [
+                {id: "569", date_debut: "2022/07/01", date_fin: "2023/06/30", nom: "Mbaye", prenom: "Dame" , date_de_naissance: "1986/08/02"},
+                {id: "568", date_debut: "2021/07/01", date_fin: "2022/06/30", nom: "Mbaye", prenom: "Madiaw" , date_de_naissance: "1986/08/02"},
+                {id: "567", date_debut: "2020/07/01", date_fin: "2021/06/30", nom: "Mbaye", prenom: "Lamine" , date_de_naissance: "1986/08/02"},
+            ],
+            facture: [
+                {id: "123", date: "2022/08/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Dame" },
+                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"},
+                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"},
+            ]
+        },
+        E:{
+            contrat: [
+                {id: "569", date_debut: "2022/07/01", date_fin: "2023/06/30", nom: "Mbaye", prenom: "Dame" , date_de_naissance: "1986/08/02"},
+                {id: "568", date_debut: "2021/07/01", date_fin: "2022/06/30", nom: "Mbaye", prenom: "Madiaw" , date_de_naissance: "1986/08/02"},
+                {id: "567", date_debut: "2020/07/01", date_fin: "2021/06/30", nom: "Mbaye", prenom: "Lamine" , date_de_naissance: "1986/08/02"},
+            ],
+            facture: [
+                {id: "123", date: "2022/08/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Dame" },
+                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"},
+                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"},
+            ]
+        }
+    },
     ]
     return (
         <table className="border-separate border border-slate-400 ">
