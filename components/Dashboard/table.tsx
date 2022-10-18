@@ -4,37 +4,37 @@ import RmnEtagesData from '../../src/types/RmnEtages';
 import Link from 'next/link'
 
 const TableA = () => {
-    const [etages, setEtages] = useState<Array<RmnEtagesData>>([]);
-    const [searchAppart, setSearchAppart] = useState<string>("");
+    // const [etages, setEtages] = useState<Array<RmnEtagesData>>([]);
+    // const [searchAppart, setSearchAppart] = useState<string>("");
 
-    useEffect(() => {
-        retrieveEtages();
-    }, []);
+    // useEffect(() => {
+    //     retrieveEtages();
+    // }, []);
 
-    const retrieveEtages = () => {
-        RmnDataService.get({
-            id: searchAppart
-        })
-            .then((response: any) => {
-                setEtages(response.data.body);
+    // const retrieveEtages = () => {
+    //     RmnDataService.get({
+    //         id: searchAppart
+    //     })
+    //         .then((response: any) => {
+    //             setEtages(response.data.body);
 
-                // navigate('/some-route', response.data.body);
-            })
-            .catch((e: Error) => {
-                console.log(e);
-            });
-    };
+    //             // navigate('/some-route', response.data.body);
+    //         })
+    //         .catch((e: Error) => {
+    //             console.log(e);
+    //         });
+    // };
 
-    const findByAppart = () => {
-        RmnDataService.findByTitle(searchAppart)
-            .then((response: any) => {
-                setEtages(response.data);
-                console.log(response.data);
-            })
-            .catch((e: Error) => {
-                console.log(e);
-            });
-    };
+    // const findByAppart = () => {
+    //     RmnDataService.findByTitle(searchAppart)
+    //         .then((response: any) => {
+    //             setEtages(response.data);
+    //             console.log(response.data);
+    //         })
+    //         .catch((e: Error) => {
+    //             console.log(e);
+    //         });
+    // };
     const body = [
         { etages: "4", A: "4A", B: "4B", C: "4C", D: "4D", E: "4E" },
         { etages: "3", A: "3A", B: "3B", C: "3C", D: "3D", E: "3E" },
@@ -52,7 +52,7 @@ const TableA = () => {
                     <th className="text-3xl font-medium text-white px-2 py-4 border-r">
                         Etages
                     </th>
-                    <th colSpan={6} className="text-3xl font-medium text-white  font-light px-6 py-4 whitespace-nowrap text-center border-r">APPARTEMENTS</th>
+                    <th colSpan={6} className="text-3xl font-medium text-white px-6 py-4 whitespace-nowrap text-center border-r">APPARTEMENTS</th>
                 </tr>
             </thead>
 
@@ -68,22 +68,22 @@ const TableA = () => {
                             </Link>
                         </td>
                         <td className="text-xl text-white font-light px-6 py-4 whitespace-nowrap hover:bg-[#0c7dad] text-center border-r">
-                            <a onClick={() => setSearchAppart(row.B)} className="mt-6 w-96 rounded-xl text-center hover:text-orange-400 text-white">
+                            <a  className="mt-6 w-96 rounded-xl text-center hover:text-orange-400 text-white">
                                 <h3 className="text-2xl font-bold">{row.B}</h3>
                             </a>
                         </td>
                         <td className="text-xl text-white font-light px-6 py-4 whitespace-nowrap hover:bg-[#0c7dad] text-center border-r">
-                            <a onClick={() => setSearchAppart(row.C)} className="mt-6 w-96 rounded-xl text-center hover:text-orange-400 text-white">
+                            <a  className="mt-6 w-96 rounded-xl text-center hover:text-orange-400 text-white">
                                 <h3 className="text-2xl font-bold">{row.C}</h3>
                             </a>
                         </td>
                         <td className="text-xl text-white font-light px-6 py-4 whitespace-nowrap hover:bg-[#0c7dad] text-center border-r">
-                            <a onClick={() => setSearchAppart(row.D)} className="mt-6 w-96 rounded-xl text-center hover:text-orange-400 text-white">
+                            <a   className="mt-6 w-96 rounded-xl text-center hover:text-orange-400 text-white">
                                 <h3 className="text-2xl font-bold">{row.D}</h3>
                             </a>
                         </td>
                         <td className="text-xl text-white font-light px-6 py-4 whitespace-nowrap hover:bg-[#0c7dad] text-center border-r">
-                            <a onClick={() => setSearchAppart(row.E)} className="mt-6 w-96 rounded-xl text-center hover:text-orange-400 text-white">
+                            <a  className="mt-6 w-96 rounded-xl text-center hover:text-orange-400 text-white">
                                 <h3 className="text-2xl font-bold">{row.E}</h3>
                             </a>
                         </td>
