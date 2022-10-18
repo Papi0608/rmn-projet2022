@@ -20,7 +20,7 @@ const DashboardTableSection = () => {
                   <th className="text-3xl font-medium text-white px-2 py-4 border-r">
                   Client
                   </th>
-                  <th colSpan={6} className="text-3xl font-medium text-white  font-light px-6 py-4 whitespace-nowrap text-center border-r">Facture</th>
+                  <th colSpan={6} className="text-3xl font-medium text-white px-6 py-4 whitespace-nowrap text-center border-r">Facture</th>
                 </tr>
               </thead>
               
