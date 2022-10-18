@@ -1,6 +1,8 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
 import RmnDataService from "../../src/services/RmnService";
 import RmnEtagesData from '../../src/types/RmnEtages';
+import Link from 'next/link'
+
 const TableA = () => {
     const [etages, setEtages] = useState<Array<RmnEtagesData>>([]);
     const [searchAppart, setSearchAppart] = useState<string>("");
@@ -15,6 +17,8 @@ const TableA = () => {
         })
             .then((response: any) => {
                 setEtages(response.data.body);
+
+                // navigate('/some-route', response.data.body);
             })
             .catch((e: Error) => {
                 console.log(e);
@@ -40,135 +44,7 @@ const TableA = () => {
     ];
 
 
-    const etage = [
-        {
-        id: "1",
-        A:{
-            contrat: [
-                {id: "569", date_debut: "2022/07/01", date_fin: "2023/06/30", nom: "Mbaye", prenom: "Dame" , date_de_naissance: "1986/08/02"},
-                {id: "568", date_debut: "2021/07/01", date_fin: "2022/06/30", nom: "Mbaye", prenom: "Madiaw" , date_de_naissance: "1986/08/02"},
-                {id: "567", date_debut: "2020/07/01", date_fin: "2021/06/30", nom: "Mbaye", prenom: "Lamine" , date_de_naissance: "1986/08/02"},
-            
-            ],
-            facture: [
-                {id: "123", date: "2022/08/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Dame" },
-                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"},
-                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"},
-            ]
-        },
-        B:{
-            contrat: [
-                {id: "569", date_debut: "2022/07/01", date_fin: "2023/06/30", nom: "Mbaye", prenom: "Dame" , date_de_naissance: "1986/08/02"},
-                {id: "568", date_debut: "2021/07/01", date_fin: "2022/06/30", nom: "Mbaye", prenom: "Madiaw" , date_de_naissance: "1986/08/02"},
-                {id: "567", date_debut: "2020/07/01", date_fin: "2021/06/30", nom: "Mbaye", prenom: "Lamine" , date_de_naissance: "1986/08/02"},
-            ],
-            facture: [
-                {id: "123", date: "2022/08/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Dame" },
-                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"},
-                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"},
-            ]
-        },
-        C:{
-            contrat: [
-                {id: "569", date_debut: "2022/07/01", date_fin: "2023/06/30", nom: "Mbaye", prenom: "Dame" , date_de_naissance: "1986/08/02"},
-                {id: "568", date_debut: "2021/07/01", date_fin: "2022/06/30", nom: "Mbaye", prenom: "Madiaw" , date_de_naissance: "1986/08/02"},
-                {id: "567", date_debut: "2020/07/01", date_fin: "2021/06/30", nom: "Mbaye", prenom: "Lamine" , date_de_naissance: "1986/08/02"},
-            ],
-            facture: [
-                {id: "123", date: "2022/08/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Dame" },
-                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"},
-                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"},
-            ]
-        },
-        D:{
-            contrat: [
-                {id: "569", date_debut: "2022/07/01", date_fin: "2023/06/30", nom: "Mbaye", prenom: "Dame" , date_de_naissance: "1986/08/02"},
-                {id: "568", date_debut: "2021/07/01", date_fin: "2022/06/30", nom: "Mbaye", prenom: "Madiaw" , date_de_naissance: "1986/08/02"},
-                {id: "567", date_debut: "2020/07/01", date_fin: "2021/06/30", nom: "Mbaye", prenom: "Lamine" , date_de_naissance: "1986/08/02"},
-            ],
-            facture: [
-                {id: "123", date: "2022/08/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Dame" },
-                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"},
-                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"},
-            ]
-        },
-        E:{
-            contrat: [
-                {id: "569", date_debut: "2022/07/01", date_fin: "2023/06/30", nom: "Mbaye", prenom: "Dame" , date_de_naissance: "1986/08/02"},
-                {id: "568", date_debut: "2021/07/01", date_fin: "2022/06/30", nom: "Mbaye", prenom: "Madiaw" , date_de_naissance: "1986/08/02"},
-                {id: "567", date_debut: "2020/07/01", date_fin: "2021/06/30", nom: "Mbaye", prenom: "Lamine" , date_de_naissance: "1986/08/02"},
-            ],
-            facture: [
-                {id: "123", date: "2022/08/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Dame" },
-                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"},
-                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"},
-            ]
-        }
-        },
-        {id: "1",
-        A:{
-            contrat: [
-                {id: "569", date_debut: "2022/07/01", date_fin: "2023/06/30", nom: "Mbaye", prenom: "Dame" , date_de_naissance: "1986/08/02"},
-                {id: "568", date_debut: "2021/07/01", date_fin: "2022/06/30", nom: "Mbaye", prenom: "Madiaw" , date_de_naissance: "1986/08/02"},
-                {id: "567", date_debut: "2020/07/01", date_fin: "2021/06/30", nom: "Mbaye", prenom: "Lamine" , date_de_naissance: "1986/08/02"},
-            
-            ],
-            facture: [
-                {id: "123", date: "2022/08/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Dame" },
-                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"},
-                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"},
-            ]
-        },
-        B:{
-            contrat: [
-                {id: "569", date_debut: "2022/07/01", date_fin: "2023/06/30", nom: "Mbaye", prenom: "Dame" , date_de_naissance: "1986/08/02"},
-                {id: "568", date_debut: "2021/07/01", date_fin: "2022/06/30", nom: "Mbaye", prenom: "Madiaw" , date_de_naissance: "1986/08/02"},
-                {id: "567", date_debut: "2020/07/01", date_fin: "2021/06/30", nom: "Mbaye", prenom: "Lamine" , date_de_naissance: "1986/08/02"},
-            ],
-            facture: [
-                {id: "123", date: "2022/08/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Dame" },
-                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"},
-                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"},
-            ]
-        },
-        C:{
-            contrat: [
-                {id: "569", date_debut: "2022/07/01", date_fin: "2023/06/30", nom: "Mbaye", prenom: "Dame" , date_de_naissance: "1986/08/02"},
-                {id: "568", date_debut: "2021/07/01", date_fin: "2022/06/30", nom: "Mbaye", prenom: "Madiaw" , date_de_naissance: "1986/08/02"},
-                {id: "567", date_debut: "2020/07/01", date_fin: "2021/06/30", nom: "Mbaye", prenom: "Lamine" , date_de_naissance: "1986/08/02"},
-            ],
-            facture: [
-                {id: "123", date: "2022/08/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Dame" },
-                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"},
-                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"},
-            ]
-        },
-        D:{
-            contrat: [
-                {id: "569", date_debut: "2022/07/01", date_fin: "2023/06/30", nom: "Mbaye", prenom: "Dame" , date_de_naissance: "1986/08/02"},
-                {id: "568", date_debut: "2021/07/01", date_fin: "2022/06/30", nom: "Mbaye", prenom: "Madiaw" , date_de_naissance: "1986/08/02"},
-                {id: "567", date_debut: "2020/07/01", date_fin: "2021/06/30", nom: "Mbaye", prenom: "Lamine" , date_de_naissance: "1986/08/02"},
-            ],
-            facture: [
-                {id: "123", date: "2022/08/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Dame" },
-                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"},
-                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"},
-            ]
-        },
-        E:{
-            contrat: [
-                {id: "569", date_debut: "2022/07/01", date_fin: "2023/06/30", nom: "Mbaye", prenom: "Dame" , date_de_naissance: "1986/08/02"},
-                {id: "568", date_debut: "2021/07/01", date_fin: "2022/06/30", nom: "Mbaye", prenom: "Madiaw" , date_de_naissance: "1986/08/02"},
-                {id: "567", date_debut: "2020/07/01", date_fin: "2021/06/30", nom: "Mbaye", prenom: "Lamine" , date_de_naissance: "1986/08/02"},
-            ],
-            facture: [
-                {id: "123", date: "2022/08/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Dame" },
-                {id: "456", date: "2021/07/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Madiaw"},
-                {id: "789", date: "2020/06/30", statut: "Payer", client_nom:"Mbaye", client_prenom:"Lamine"},
-            ]
-        }
-    },
-    ]
+    
     return (
         <table className="border-separate border border-slate-400 ">
             <thead className="border-b">
@@ -185,9 +61,11 @@ const TableA = () => {
                     <tr className="bg-[#0E5672] border-b" key={index}>
                         <td className="px-6 py-4 whitespace-nowrap text-xl font-medium text-center text-white border-r">{row.etages}</td>
                         <td className="text-xl text-white font-light px-6 py-4 whitespace-nowrap hover:bg-[#0c7dad] text-center border-r">
-                            <a onClick={() => setSearchAppart(row.A)} className="mt-6 w-96 rounded-xl text-center hover:text-orange-400 text-white">
+                            <Link href={row.A}>
+                            <a className="mt-6 w-96 rounded-xl text-center hover:text-orange-400 text-white">
                                 <h3 className="text-2xl font-bold">{row.A}</h3>
                             </a>
+                            </Link>
                         </td>
                         <td className="text-xl text-white font-light px-6 py-4 whitespace-nowrap hover:bg-[#0c7dad] text-center border-r">
                             <a onClick={() => setSearchAppart(row.B)} className="mt-6 w-96 rounded-xl text-center hover:text-orange-400 text-white">

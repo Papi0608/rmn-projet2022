@@ -3,11 +3,11 @@ import RmnEtagesData from "../types/RmnEtages";
 import RmnFacturesData from "../types/RmnFactures";
 
 const getAll = () => {
-  return http.get<Array<RmnEtagesData>>("");
+  return http.get("");
 };
 
 const get = (data: RmnEtagesData) => {
-  return http.post<RmnEtagesData>("",data);
+  return http.post("",data);
 };
 
 const create = (data: RmnFacturesData) => {
