@@ -1,4 +1,5 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
+import Details from "../../components/common/Details";
 import RmnDataService from "../../src/services/RmnService";
 import RmnEtagesData from '../../src/types/RmnEtages';
 
@@ -264,23 +265,23 @@ const DashboardTableSection = () => {
         }
     }
 ]
-  
+   const [etages, setEtages] = useState([]);
+
+    useEffect(() => {
+        retrieveEtages();
+    }, []);
+
+    const retrieveEtages = () => {
+        RmnDataService.getAll()
+            .then((response:any) => {
+                setEtages(response.data.body);
+            })
+            .catch((e) => {
+                console.log(e);
+            });
+    };
     return (
-      <div className="container mx-auto px-4">
-                  {body.map((row, index) => (
-                    <ul>
-                        {row.A.contrat.map((c, i) => (
-                        <li key={i}>
-                          <span>{c.id}</span>
-                          <span>{c.nom}</span>
-                          <span>{c.prenom}</span>
-                          <span>{c.date_debut}</span>
-                          <span>{c.date_de_naissance}</span>
-                        </li>
-                        ))}
-                    </ul>
-                ))}
-      </div>
+      <Details etages={etages}/>
     );
   };
   
