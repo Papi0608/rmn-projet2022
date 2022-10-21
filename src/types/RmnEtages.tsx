@@ -1,4 +1,5 @@
 export default interface RmnEtageData {
+  [x: string]: any
   id: string,
   A?: {
     contrat: Array<any>
