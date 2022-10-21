@@ -11,7 +11,7 @@ function Home() {
     
   <Layout>
   <NavSection/>
-  <SidebarSection/>
+  <SidebarSection name={"Acceuil"}/>
   <DashboardTable/>
   </Layout>
     </>

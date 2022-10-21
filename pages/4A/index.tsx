@@ -21,7 +21,7 @@ const DashboardTableSection = (props: { etages: any; }) => {
     return (
         <Layout>
         <NavSection/>
-        <SidebarSection/>
+        <SidebarSection name={"4A"}/>
         <Details etages={props.etages}/>
         </Layout>
     );
