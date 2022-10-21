@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.container {
+  padding-top: 30px;
+  width: auto;
+  margin: auto;
+}
+
+.input {
+  padding: 5px 15px;
+  width: 300px;
+}
+
+.contrat-list,
+.facture-list {
+  margin-top: 30px;
+}
+.contrat,
+.facture {
+  list-style: none;
+  margin: 10px 0;
+  padding: 10px;
+  background: #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contrat-id,
+.facture-id   {
+  color: red;
+  margin-right: 20px;
+}
+
+.contrat-nom ,
+.contrat-prenom , 
+.facture-client_nom,
+.facture-client_prenom,
+.facture-statut,
+.facture-client_nom {
+  color: blue;
+}
+
+.contrat-date {
+  margin-left: auto;
+}
