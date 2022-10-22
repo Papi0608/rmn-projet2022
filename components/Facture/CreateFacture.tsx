@@ -25,6 +25,7 @@ export default function CreateFacture() {
     },
   ]);
 
+
   const handleInputChange = (e) => {
     dispatch({ field: e.target.name, value: e.target.value });
   };
@@ -132,7 +133,7 @@ export default function CreateFacture() {
                 className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="sender"
               >
-                Your email address
+                Email
               </label>
               <input
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -140,22 +141,22 @@ export default function CreateFacture() {
                 name="sender"
                 type="email"
                 required
-                placeholder="Who is this invoice from? (required)"
+                placeholder="Email (aubligatoire)"
                 onChange={handleInputChange}
               />
               <label
                 className="block text-gray-700 text-sm font-bold my-3"
                 htmlFor="billTo"
               >
-                Bill To
+                Nom & Prenom
               </label>
               <textarea
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="billTo"
                 name="billTo"
-                type="email"
+                type="text"
                 required
-                placeholder="Who is this invoice to? (required)"
+                placeholder="Nom & Prenom (aubligatoire)"
                 onChange={handleInputChange}
               />
             </div>
@@ -164,105 +165,121 @@ export default function CreateFacture() {
                 className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="shipTo"
               >
-                Ship To
+                Adresse de travail
               </label>
               <input
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                 id="shipTo"
                 name="shipTo"
-                type="email"
+                type="text"
                 required
-                placeholder="Client's email"
+                placeholder="Adresse de travail"
                 onChange={handleInputChange}
               />
             </div>
             <div className="mb-6">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="shipTo"
+              >
+                Telephone
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                id="tel"
+                name="tel"
+                type="text"
+                required
+                placeholder="Telephone"
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="shipTo"
+              >
+                Montant loyer
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                id="shipTo"
+                name="shipTo"
+                type="number"
+                required
+                placeholder="Montant loyer"
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                htmlFor="shipTo"
+              >
+                Impayes
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                id="shipTo"
+                name="shipTo"
+                type="number"
+                required
+                placeholder="Impayes"
+                onChange={handleInputChange}
+              />
+            </div>
+     
+ 
+            <div className="mb-6">
+
+                <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Appartement No</label>
+<select id="countries" 
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
+
+  <option selected></option>
+  <option value="R">R</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+</select>
+<label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Appartement Lettre</label>
+<select id="countries" 
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
+
+  <option selected></option>
+  <option value="A">A</option>
+  <option value="B">B</option>
+  <option value="C">C</option>
+  <option value="D">D</option>
+  <option value="E">E</option>
+</select>
+                
+              </div>
+              <div className="mb-6">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="dueDate"
               >
-                Due Date
+                Date
               </label>
               <input
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                 id="dueDate"
                 name="dueDate"
                 type="date"
+                placeholder="dd-mm-yyyy"
+                value="" 
+                min="2022-08-01" max="2030-12-31"
                 onChange={handleInputChange}
               />
             </div>
-            {invoiceFields.map((invoiceField, i) => (
-              <div
-                className="flex justify-center items-center"
-                key={`${invoiceField}~${i}`}
-              >
-                <label
-                  className="block text-gray-700 text-sm font-bold mb-2 w-full mr-5"
-                  htmlFor={`${invoiceField.itemDescription}~${i}`}
-                >
-                  Invoice Item
-                  <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                    id={`${invoiceField.itemDescription}~${i}`}
-                    name="itemDescription"
-                    type="text"
-                    spellCheck="false"
-                    value={invoiceField.itemDescription}
-                    onChange={(event) => handleChange(i, event)}
-                  />
-                </label>
-                <label
-                  className="block text-gray-700 text-sm font-bold mb-2 w-full mr-5"
-                  htmlFor={`${invoiceField.qty}~${i}`}
-                >
-                  Quantity
-                  <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                    id={`${invoiceField.qty}~${i}`}
-                    name="qty"
-                    type="number"
-                    spellCheck="false"
-                    value={invoiceField.qty}
-                    onChange={(event) => handleChange(i, event)}
-                  />
-                </label>
-                <label
-                  className="block text-gray-700 text-sm font-bold mb-2 w-full  mr-5"
-                  htmlFor={`${invoiceField.price}~${i}`}
-                >
-                  Unit Price
-                  <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                    id={`${invoiceField.price}~${i}`}
-                    name="price"
-                    type="tel"
-                    spellCheck="false"
-                    value={invoiceField.price}
-                    onChange={(event) => handleChange(i, event)}
-                  />
-                </label>
-                <button
-                  className="bg-red-500 hover:bg-red-700 h-8 px-5 py-3 flex items-center justify-center text-white font-bold rounded focus:outline-none focus:shadow-outline"
-                  type="button"
-                  onClick={() => handleRemoveInvoice(i)}
-                >
-                  Remove
-                </button>
-              </div>
-            ))}
-            <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="button"
-              onClick={addInvoiceItem}
-            >
-              Add Item
-            </button>
             <div className="my-6 flex flex-col">
               <label
                 htmlFor="note"
                 className="block text-gray-700 text-sm font-bold mb-2 w-full"
               >
-                Invoice Notes
+                Notes
               </label>
               <textarea
                 id="note"
@@ -282,14 +299,14 @@ export default function CreateFacture() {
                 type="button"
                 onClick={handleSendInvoice}
               >
-                Send Invoice
+                Enregistrer
               </button>
               <button
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="button"
                 onClick={handlePrintInvoice}
               >
-                Download Invoice
+                Imprimer
               </button>
             </div>
           </form>
