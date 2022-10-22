@@ -8,7 +8,7 @@ export default function Home () {
   return (
     <Layout>
       <NavSection/>
-      <SidebarSection/>
+      <SidebarSection name={"Acceuil"}/>
       <DashboardTable/>
     </Layout>
   )
