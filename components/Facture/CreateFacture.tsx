@@ -14,7 +14,7 @@ export default function CreateFacture() {
     note:'',
     
   }
-  function reducer(state = initialState, { field, value }) {
+  function reducer(state = initialState, { field, value }:any) {
     return { ...state, [field]: value };
   }
 
@@ -22,7 +22,7 @@ export default function CreateFacture() {
   const [total, setTotal] = useState(0);
 
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e:any) => {
     dispatch({ field: e.target.name, value: e.target.value });
   };
 
@@ -84,11 +84,11 @@ export default function CreateFacture() {
               />
               <label
                 className="block text-gray-700 text-sm font-bold my-3"
-                htmlFor="billTo"
+                htmlFor="nomPrenom"
               >
                 Nom & Prenom
               </label>
-              <textarea
+              <input
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="nomPrenom"
                 name="nomPrenom"
@@ -101,7 +101,7 @@ export default function CreateFacture() {
             <div className="mb-6">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="shipTo"
+                htmlFor="adresseDeTravail"
               >
                 Adresse de travail
               </label>
@@ -135,7 +135,7 @@ export default function CreateFacture() {
             <div className="mb-6">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="shipTo"
+                htmlFor="montantLoyer"
               >
                 Montant loyer
               </label>
@@ -152,7 +152,7 @@ export default function CreateFacture() {
             <div className="mb-6">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="shipTo"
+                htmlFor="impayes"
               >
                 Impayes
               </label>
@@ -170,8 +170,8 @@ export default function CreateFacture() {
  
             <div className="mb-6">
 
-                <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Appartement No</label>
-<select id="countries" 
+                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Appartement No</label>
+<select id="appart" 
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
 
   <option selected></option>
@@ -181,8 +181,8 @@ export default function CreateFacture() {
   <option value="3">3</option>
   <option value="4">4</option>
 </select>
-<label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Appartement Lettre</label>
-<select id="countries" 
+<label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Appartement Lettre</label>
+<select id="lettre" 
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
 
   <option selected></option>
@@ -197,7 +197,7 @@ export default function CreateFacture() {
               <div className="mb-6">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="dueDate"
+                htmlFor="dateFacture"
               >
                 Date
               </label>

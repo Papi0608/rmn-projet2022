@@ -11,7 +11,7 @@ function Dashboard() {
     
   <Layout>
   <NavSection/>
-  <SidebarSection/>
+  <SidebarSection name={"Dashboard"}/>
   <DashboardTable/>
   </Layout>
     </>
