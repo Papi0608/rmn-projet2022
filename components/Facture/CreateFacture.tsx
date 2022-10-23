@@ -4,106 +4,44 @@ import axios from 'axios';
 
 export default function CreateFacture() {
   const initialState = {
-    sender: '',
-    billTo: '',
-    shipTo: '',
-    dueDate: '',
-    note: '',
-  };
-
+    email:'',
+    nomPrenom:'',
+    adresseDeTravail:'',
+    tel:'',
+    montantLoyer:'',
+    impayes:'',
+    dateFacture:'',
+    note:'',
+    
+  }
   function reducer(state = initialState, { field, value }) {
     return { ...state, [field]: value };
   }
 
   const [formFields, dispatch] = useReducer(reducer, initialState);
   const [total, setTotal] = useState(0);
-  const [invoiceFields, setInvoiceFields] = useState([
-    {
-      itemDescription: '',
-      qty: '',
-      price: '',
-    },
-  ]);
 
 
   const handleInputChange = (e) => {
     dispatch({ field: e.target.name, value: e.target.value });
   };
 
-  const addInvoiceItem = () => {
-    // const values = [...invoiceFields];
-    // values.push({
-    //   itemDescription: '',
-    //   qty: '',
-    //   price: '',
-    // });
-    // setInvoiceFields(values);
-
-    // setInvoiceFields((prevState) => [
-    //   ...prevState,
-    //   {
-    //     itemDescription: '',
-    //     qty: '',
-    //     price: '',
-    //   },
-    // ]);
-
-    setInvoiceFields([
-      ...invoiceFields,
-      {
-        itemDescription: '',
-        qty: '',
-        price: '',
-      },
-    ]);
-  };
-
-  const handleRemoveInvoice = (index) => {
-    const values = [...invoiceFields];
-    if (values.length === 1) return false;
-    values.splice(index, 1);
-    setInvoiceFields(values);
-  };
-
-  const handleChange = (index, event) => {
-    const values = [...invoiceFields];
-    if (event.target.name === 'itemDescription') {
-      values[index].itemDescription = event.target.value;
-    } else if (event.target.name === 'qty') {
-      values[index].qty = event.target.value;
-    } else if (event.target.name === 'price') {
-      values[index].price = event.target.value;
-    }
-    setInvoiceFields(values);
-  };
-
-  const getTotal = () => {
-    let computedTotal = 0;
-    invoiceFields.forEach((field) => {
-      const quantityNumber = parseFloat(field.qty);
-      const rateNumber = parseFloat(field.price);
-      const amount =
-        quantityNumber && rateNumber ? quantityNumber * rateNumber : 0;
-      computedTotal += amount;
-    });
-    return setTotal(computedTotal);
-  };
-
-  useEffect(() => {
-    getTotal();
-  }, [total, invoiceFields]);
 
   const handleSendInvoice = async () => {
     try {
-      let { billTo, dueDate, note, sender, shipTo } = formFields;
-      const { data } = await axios.post('http://localhost:1337/invoices', {
-        billTo,
-        dueDate,
+      let { 
+        email,nomPrenom,adresseDeTravail,tel,
+        montantLoyer,impayes,
+        dateFacture,note } = formFields;
+      const { data } = await axios.post('', {
+        email,
+        nomPrenom,
+        adresseDeTravail,
+        tel,
+        montantLoyer,
+        impayes,
+        dateFacture,
         note,
-        sender,
-        shipTo,
-        invoiceItemDetails: invoiceFields,
-        total,
       });
       console.log(data);
       window.print();
@@ -131,14 +69,14 @@ export default function CreateFacture() {
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="sender"
+                htmlFor="email"
               >
                 Email
               </label>
               <input
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="sender"
-                name="sender"
+                id="email"
+                name="email"
                 type="email"
                 required
                 placeholder="Email (aubligatoire)"
@@ -152,8 +90,8 @@ export default function CreateFacture() {
               </label>
               <textarea
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="billTo"
-                name="billTo"
+                id="nomPrenom"
+                name="nomPrenom"
                 type="text"
                 required
                 placeholder="Nom & Prenom (aubligatoire)"
@@ -169,8 +107,8 @@ export default function CreateFacture() {
               </label>
               <input
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                id="shipTo"
-                name="shipTo"
+                id="adresseDeTravail"
+                name="adresseDeTravail"
                 type="text"
                 required
                 placeholder="Adresse de travail"
@@ -180,7 +118,7 @@ export default function CreateFacture() {
             <div className="mb-6">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="shipTo"
+                htmlFor="tel"
               >
                 Telephone
               </label>
@@ -203,8 +141,8 @@ export default function CreateFacture() {
               </label>
               <input
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                id="shipTo"
-                name="shipTo"
+                id="montantLoyer"
+                name="montantLoyer"
                 type="number"
                 required
                 placeholder="Montant loyer"
@@ -220,8 +158,8 @@ export default function CreateFacture() {
               </label>
               <input
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                id="shipTo"
-                name="shipTo"
+                id="impayes"
+                name="impayes"
                 type="number"
                 required
                 placeholder="Impayes"
@@ -265,8 +203,8 @@ export default function CreateFacture() {
               </label>
               <input
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                id="dueDate"
-                name="dueDate"
+                id="dateFacture"
+                name="dateFacture"
                 type="date"
                 placeholder="dd-mm-yyyy"
                 value="" 
@@ -287,11 +225,6 @@ export default function CreateFacture() {
                 onChange={handleInputChange}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               />
-              {/* <pre>{JSON.stringify(invoiceFields, null, 2)}</pre> */}
-            </div>
-            <div className="mb-6 flex justify-between font-bold text-xl">
-              <p>Total:</p>
-              <p>{total}</p>
             </div>
             <div className="flex items-center justify-between">
               <button
