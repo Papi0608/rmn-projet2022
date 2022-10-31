@@ -1,6 +1,16 @@
 import React, { ReactNode, useState } from "react";
 import RmnEtagesData from '../../src/types/RmnEtages';
 
+export  const getServerSideProps = (context: { query: { title: any; }; })=> {
+  console.log(context.query) 
+  return {
+      props: { 
+         title: context.query.title //pass it to the page props
+      }
+  }
+}
+
+
 const Details = (props: { etages: string; }) =>  {
     if(typeof props.etages == 'undefined'){
         console.log("Pas de parametres")

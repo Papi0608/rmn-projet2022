@@ -3,13 +3,15 @@ import Layout from "../components/Header/layout"
 import DashboardTable from "../components/Dashboard/DashboardTable";
 import NavSection from  "../components/Header/Nav"
 import SidebarSection from  "../components/Header/Sidebar"
+import ShowFacture from "../components/Facture/ShowFacture";
 export default function Home () {
   
   return (
     <Layout>
       <NavSection/>
-      <SidebarSection name={"Acceuil"}/>
-      <DashboardTable/>
+      {/* <SidebarSection name={"Acceuil"}/> */}
+      {/* <DashboardTable/> */}
+      <ShowFacture/>
     </Layout>
   )
 }
